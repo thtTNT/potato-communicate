@@ -6,7 +6,7 @@ npm install potato-communicate
 
 ## 使用
 
-客户端
+服务端
 
 ```javascript
 let pc = require("potato-communicate")
@@ -25,7 +25,7 @@ server.on("connection", (client) => {
 })
 ```
 
-服务端
+客户端
 
 ```javascript
 let pc = require("potato-commnunicate")
