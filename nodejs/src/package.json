@@ -1,0 +1,10 @@
+{
+  "name": "potato-communicate",
+  "version": "1.0.1",
+  "description": "Potato跨语言通讯框架Nodejs端",
+  "scripts": {
+  },
+  "author": "",
+  "license": "ISC",
+  "main": "./index.js"
+}
