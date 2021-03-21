@@ -48,6 +48,7 @@ class Client {
 
     write(object) {
         this.socket.write(converter.toPCO(object))
+        this.socket.write("\n")
     }
 
 }

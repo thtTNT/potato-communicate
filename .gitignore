@@ -1,4 +1,3 @@
-
 nodejs/test.js
 
 python3/dist
@@ -7,3 +6,4 @@ python3/venv
 python3/test.py
 python3/potato_communicate/__pycache__
 python3/.idea
+python3/build

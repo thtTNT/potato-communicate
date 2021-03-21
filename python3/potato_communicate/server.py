@@ -8,14 +8,12 @@ class Server:
         self.server = socket.socket()
         self.server.bind(("0.0.0.0", port))
         self.server.listen(5)
-        self.events = {
-            "client": lambda new_client: {}
-        }
+        self.executor = lambda data: {}
 
     def listen(self):
         while True:
             client, address = self.server.accept()
-            self.events["client"](PCClient.fromSocket(client))
+            PCClient.fromSocket(client).whenData(lambda data: self.executor(data))
 
-    def on(self, name, executor):
-        self.events[name] = executor
+    def onMessage(self, executor):
+        self.executor = executor

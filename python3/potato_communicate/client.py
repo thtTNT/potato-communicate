@@ -36,7 +36,8 @@ class Client:
         return client
 
     def onData(self, data):
-        self.dataEvent(data)
+        result = self.dataEvent(data)
+        self.write(result)
 
     def __init__(self, conn):
         self.conn = conn
@@ -44,9 +45,7 @@ class Client:
         Receiver(conn, lambda data: self.onData(data)).start()
 
     def write(self, obj):
-        self.conn.send(converter.toPCO(obj) + "\n")
+        self.conn.send((converter.toPCO(obj) + "\n").encode("utf-8"))
 
     def whenData(self, executor):
         self.dataEvent = executor
-
-
